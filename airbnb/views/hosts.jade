@@ -28,6 +28,7 @@ block content
             p ✨Rating✨:   #{h.hostRating}
             
             .form-group
+              // button.m-1.btn.btn-danger(type="submit" formaction="/hosts/count") Listings Count
               button.m-1.btn.btn-danger(type="submit" formaction="/hosts/delete") X
               button.m-1.btn.btn-secondary(type="submit" formaction="/hosts/update") Update
             hr
@@ -59,30 +60,7 @@ block content
             a(class="page-link" href="/hosts?page=9") 9
           li(class="page-item")
             a(class="page-link" href="/hosts?page=10") 10
-          li(class="page-item")
-            a(class="page-link" href="/hosts?page=11") 11
-          li(class="page-item")
-            a(class="page-link" href="/hosts?page=12") 12
-          li(class="page-item")
-            a(class="page-link" href="/hosts?page=13") 13
-          li(class="page-item")
-            a(class="page-link" href="/hosts?page=14") 14
-          li(class="page-item")
-          //-   a(class="page-link" href="/hosts?page=15") 15
-          //- li(class="page-item")
-          //-   a(class="page-link" href="/hosts?page=16") 16
-          //- li(class="page-item")
-          //-   a(class="page-link" href="/hosts?page=17") 17
-          //- li(class="page-item")
-          //-   a(class="page-link" href="/hosts?page=18") 18
-          //- li(class="page-item")
-          //-   a(class="page-link" href="/hosts?page=19") 19
-          //- li(class="page-item")
-          //-   a(class="page-link" href="/hosts?page=20") 20
-          //- li(class="page-item")
-          //-   a(class="page-link" href="/hosts?page=21") 21
-
-
+            
     .col-4
       h2 Become A New Hosts
       form(action="/hosts/create", method="post")

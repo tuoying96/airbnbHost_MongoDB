@@ -57,8 +57,6 @@ function myDB() {
     }
   };
 
- 
-
   myDB.createHost = async function (host) {
     const client = MongoClient(uri, { useUnifiedTopology: true });
     try {

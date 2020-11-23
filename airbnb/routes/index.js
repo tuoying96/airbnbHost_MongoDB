@@ -42,49 +42,6 @@ router.post("/hosts/create", async (req, res) => {
   }
 });
 
-router.post("/hosts/createHostInfo", async (req, res) => {
-  const host = req.body;
-  
-
-  try {
-    console.log("Create Hostinfo", host);
-    await myDB.createHostInfo(host, res);
-    req.session.msg = "HostInfo created";
-    res.redirect("/hosts");
-  } catch (err) {
-    req.session.err = err.message;
-    res.redirect("/hosts");
-  }
-});
-
-router.post("/hosts/createListing", async (req, res) => {
-  const host = req.body;
-
-  try {
-    console.log("Create Listing", host);
-    await myDB.createListing(host, res);
-    req.session.msg = "Listing created";
-    res.redirect("/hosts");
-  } catch (err) {
-    req.session.err = err.message;
-    res.redirect("/hosts");
-  }
-});
-
-router.post("/hosts/submitReview", async (req, res) => {
-  const host = req.body;
-
-  try {
-    console.log("Submit Review", host);
-    await myDB.submitReview(host, res);
-    req.session.msg = "Review Submitted";
-    res.redirect("/hosts");
-  } catch (err) {
-    req.session.err = err.message;
-    res.redirect("/hosts");
-  }
-});
-
 router.post("/hosts/delete", async (req, res) => {
   try {
     const host = req.body;
@@ -108,6 +65,22 @@ router.post("/hosts/delete", async (req, res) => {
 });
 
 router.post("/hosts/update", async (req, res) => {
+  try {
+    const host = req.body;
+    const db = await myDB.updateHost(host);
+
+    console.log("update", db);
+
+    req.session.msg = "Host Updated";
+    res.redirect("/hosts");
+  } catch (err) {
+    console.log("got error update");
+    req.session.err = err.message;
+    res.redirect("/hosts");
+  }
+});
+
+router.post("/hosts/count", async (req, res) => {
   try {
     const host = req.body;
     const db = await myDB.updateHost(host);
