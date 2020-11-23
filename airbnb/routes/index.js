@@ -88,9 +88,14 @@ router.post("/hosts/submitReview", async (req, res) => {
 router.post("/hosts/delete", async (req, res) => {
   try {
     const host = req.body;
-    console.log(host);
-    await myDB.deleteHost(host.$hostid);
-    
+    //console.log(host);
+    const { lastID, changes } = await myDB.deleteHost(host);
+    // console.log(lastID, changes);
+    if (changes === 0) {
+      req.session.err = `Couldn't delete the object ${host.name}`;
+      res.redirect("/hosts");
+      return;
+    }
 
     req.session.msg = "Host deleted";
     res.redirect("/hosts");
@@ -98,6 +103,7 @@ router.post("/hosts/delete", async (req, res) => {
     console.log("got error update");
     req.session.err = err.message;
     res.redirect("/hosts");
+    return;
   }
 });
 

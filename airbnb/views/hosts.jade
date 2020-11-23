@@ -15,16 +15,18 @@ block content
       div
         each h in hosts
           form.p-2(action="/hosts/delete" method="POST")
-            input.flex-shrink-1.m-1(style="min-width:20px" type="hidden" name="$hostid" value=h.hid)
+            input.flex-shrink-1.m-1(style="min-width:20px" type="hidden" name="_id" value=h._id)
+            input.flex-shrink-1.m-1(style="min-width:20px" type="hidden" name="hostid" value=h.hostid)
 
             label.form-group Name:
-              input.form-control.m-1(style="min-width:20px" type="text" name="$Name" value=h.name)
-            label.form-group Email:
-              input.form-control.m-1(style="min-width:20px" type="text" name="$Email" value=h.email)
-            label.form-group StartFrom:
-              input.form-control.m-1(style="min-width:20px" type="text" name="$StartFrom" value=h.startFrom)
-            label.form-group Rating:
-              input.form-control.m-1(style="min-width:20px" type="number" name="$Rating" value=h.hostRating)
+              input.form-control.m-1(style="min-width:20px" type="text" name="name" value=h.name)
+            label.form-group Email: 
+              input.form-control.m-1(style="min-width:20px" type="text" name="email" value=h.email)
+            label.form-group Phone: 
+              input.form-control.m-1(style="min-width:20px" type="text" name="phone" value=h.phone)
+            
+            p ✨Rating✨:   #{h.hostRating}
+            
             .form-group
               button.m-1.btn.btn-danger(type="submit" formaction="/hosts/delete") X
               button.m-1.btn.btn-secondary(type="submit" formaction="/hosts/update") Update
@@ -86,42 +88,46 @@ block content
       form(action="/hosts/create", method="post")
         .form-group
           label Name
-            input.form-control(type="text", name="$Name")
+            input.form-control(type="text", name="name")
 
         .form-group
           label Email
-            input.form-control(type="text", name="$Email")
+            input.form-control(type="text", name="email")
+        
+        .form-group
+          label Phone
+            input.form-control(type="text", name="phone")
 
         button.btn.btn-primary(type="submit") Create New Hosts
       div
 
-      h2 New Host Profile
-      form(action="/hosts/createHostInfo", method="post")
-        .form-group
-          label please fill out the Response Rate
-            input.form-control(type="text", name="$ResponseRate")
+      //- h2 New Host Profile
+      //- form(action="/hosts/createHostInfo", method="post")
+      //-   .form-group
+      //-     label please fill out the Response Rate
+      //-       input.form-control(type="text", name="$ResponseRate")
 
-        button.btn.btn-primary(type="submit") Submit Response Rate
+      //-   button.btn.btn-primary(type="submit") Submit Response Rate
 
-      div
+      //- div
   
-      h2 Create New Listing
-      form(action="/hosts/createListing", method="post")
-        .form-group
-          label Welcome to join Airbnb Host! 
-          label Please create your first listing:
-            input.form-control(type="text", name="$ListingName")
+      //- h2 Create New Listing
+      //- form(action="/hosts/createListing", method="post")
+      //-   .form-group
+      //-     label Welcome to join Airbnb Host! 
+      //-     label Please create your first listing:
+      //-       input.form-control(type="text", name="$ListingName")
 
-        button.btn.btn-primary(type="submit") Create New Listing
+      //-   button.btn.btn-primary(type="submit") Create New Listing
 
-      div
-      h2 Submit Review
+      //- div
+      //- h2 Submit Review
 
-      form(action="/hosts/submitReview", method="post")
-        .form-group
-          label Please write your review for this listing:
-            input.form-control(type="text", name="$Review")
+      //- form(action="/hosts/submitReview", method="post")
+      //-   .form-group
+      //-     label Please write your review for this listing:
+      //-       input.form-control(type="text", name="$Review")
 
-        button.btn.btn-primary(type="submit") Submit New Review
+      //-   button.btn.btn-primary(type="submit") Submit New Review
 
 //- then end
