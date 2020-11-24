@@ -18,6 +18,7 @@ I have uploaded the JSON files in the `/db_Data` folder, and we should use Mongo
 <div><img width="800" src="https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/draft%20file/images/7.png"/></div>
 
 ## Run Application
+### `cd airbnb`
 ### `npm install`
 To installed all `/node_modules`
 ### `npm start`
