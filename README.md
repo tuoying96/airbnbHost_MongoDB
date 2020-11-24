@@ -1,5 +1,7 @@
 # airbnbHost_MongoDB
 Please check my Project 2 Report: [Project 2 Report](https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/Project%202%20Report.pdf)
+- Clone the repository, then follow the following instructions.  
+- And your app should be running on http://localhost:3000 . It assumes that you have `mongod` running on `mongodb://localhost:27017` or that you have the MONGO_URL environment variable set to the database you want to use
 
 ## Import Data
 I have uploaded the JSON files in the `/db_Data` folder, and we should use MongoDB compass to import these data,
