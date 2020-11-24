@@ -11,8 +11,8 @@ I have uploaded the JSON files in the `/db_Data` folder, and we should use Mongo
 <div><img width="500" src="https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/draft%20file/images/2.png"/></div>
 
 2. After building these five collections, we can import JSON files into these collections,
-<div><img width="800" src="https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/draft%20file/images/3.png"/></div>
-<div><img width="800" src="https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/draft%20file/images/4.png"/></div>
+<div><img width="600" src="https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/draft%20file/images/3.png"/></div>
+<div><img width="600" src="https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/draft%20file/images/4.png"/></div>
 
 3. Finally, all of the collections has been built, and we can start to test our data and applicatio
 <div><img width="800" src="https://github.com/tuoying96/airbnbHost_MongoDB/blob/main/draft%20file/images/7.png"/></div>
