@@ -83,14 +83,17 @@ function myDB() {
     }
 
   };
-
-
   myDB.updateHost = async function (host) {
     const client = MongoClient(uri, { useUnifiedTopology: true });
     try {
       await client.connect();
       const db = client.db(dbName);
       const col = db.collection(colName);
+      console.log(host._id);
+      console.log(host.name);
+      console.log(host.email);
+      console.log(host.phone);
+
 
       return await col.updateOne(
         { _id: ObjectId(host._id) },
@@ -113,9 +116,9 @@ function myDB() {
       await client.connect();
       const db = client.db(dbName);
       const col = db.collection(colName);
-      console.log(host);
-      console.log(host._id);
-      console.log(ObjectId(host._id));
+      // console.log(host);
+      // console.log(host._id);
+      // console.log(ObjectId(host._id));
 
       return await col.deleteOne({ "_id": ObjectId(host._id) });
     } finally {

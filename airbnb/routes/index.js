@@ -10,7 +10,7 @@ router.get("/", function (req, res, next) {
 
 router.get("/hosts", async (req, res) => {
   const page = req.query.page || 1;
-  console.log("/hosts", page);
+  // console.log("/hosts", page);
 
   try {
     const hosts = await myDB.getHosts(page);
